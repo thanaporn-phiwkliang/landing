@@ -1,0 +1,47 @@
+
+.btn-pink {
+  display: inline-block;
+  background: #a96c80;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 13px 22px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-pink:hover {
+  background: #8c5367;
+}
+
+.btn-light {
+  display: inline-block;
+  background: #f8e9ee;
+  color: #855567;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: #a96c80;
+  border: 1.5px solid #a96c80;
+  border-radius: 25px;
+  padding: 11px 19px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: #a96c80;
+  color: white;
+}
+
+.full {
+  width: 100%;
+}

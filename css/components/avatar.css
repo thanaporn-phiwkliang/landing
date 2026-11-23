@@ -1,0 +1,19 @@
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #f4dce3;
+}
+
+.avatar-small {
+  width: 30px;
+  height: 30px;
+}
+
+.avatar-large {
+  width: 95px;
+  height: 95px;
+  border: 3px solid #e9bdca;
+}

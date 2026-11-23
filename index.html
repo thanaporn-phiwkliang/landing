@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRAVIN’ — Love it. List it. Save for it.</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <button class="logo" data-page="discover">
+      cravin<span>’</span>
+    </button>
+
+    <div class="search-container">
+      <span class="search-icon">⌕</span>
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Search your dream items..."
+        autocomplete="off"
+      >
+      <div id="suggestions" class="suggestions hidden"></div>
+    </div>
+
+    <nav class="navigation">
+      <button data-page="discover">Discover</button>
+      <button data-page="collections">Collections</button>
+      <button data-page="people">People</button>
+      <button data-page="profile">My Profile</button>
+    </nav>
+
+    <button class="btn btn-primary create-button" id="createPinButton">
+      + Create Pin
+    </button>
+  </header>
+
+  <main>
+    <!-- DISCOVER -->
+    <section id="discoverPage" class="page">
+      <div class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">THE ART OF WANTING MORE</p>
+          <h1>
+            Your dreams,<br>
+            <em>beautifully collected.</em>
+          </h1>
+          <p class="hero-description">
+            A little space for everything you love,
+            everything you want, and everything
+            you're working towards.
+          </p>
+
+          <button class="btn btn-dark" id="heroCreateButton">
+            Start your wishlist ♡
+          </button>
+
+          <p class="hero-caption">
+            LOVE IT. LIST IT. SAVE FOR IT.
+          </p>
+        </div>
+
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&auto=format&fit=crop"
+            alt="Fashion editorial"
+          >
+          <div class="hero-label">THE CRAVIN’ EDIT</div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">YOUR DAILY INSPIRATION</p>
+            <h2>Currently craving<span class="pink">.</span></h2>
+          </div>
+
+          <div class="toggle-group">
+            <button id="forYouButton" class="active">For You</button>
+            <button id="exploreAllButton">Explore All</button>
+          </div>
+        </div>
+
+        <div id="categoryFilters" class="category-filters"></div>
+
+        <p id="searchStatus" class="muted"></p>
+
+        <div id="pinFeed" class="masonry"></div>
+
+        <div id="emptyFeed" class="empty-state hidden">
+          <div class="empty-icon">♡</div>
+          <h3>Nothing here yet</h3>
+          <p>
+            Create your first pin or explore another category.
+          </p>
+          <button class="btn btn-primary" id="emptyCreateButton">
+            + Create Pin
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLECTIONS -->
+    <section id="collectionsPage" class="page hidden">
+      <div class="content">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">YOUR PERSONAL UNIVERSE</p>
+            <h2>My Collections<span class="pink">.</span></h2>
+          </div>
+
+          <button class="btn btn-dark" id="newCollectionButton">
+            + New Collection
+          </button>
+        </div>
+
+        <div id="collectionsGrid" class="collections-grid"></div>
+
+        <div class="section-heading section-spacing">
+          <div>
+            <p class="eyebrow">YOUR SAVED INSPIRATION</p>
+            <h2 id="selectedCollectionTitle">All My Pins</h2>
+          </div>
+
+          <button class="btn btn-outline" id="showAllCollections">
+            View All
+          </button>
+        </div>
+
+        <div id="collectionPins" class="masonry"></div>
+      </div>
+    </section>
+
+    <!-- PEOPLE -->
+    <section id="peoplePage" class="page hidden">
+      <div class="content">
+        <p class="eyebrow">THE DREAMERS CLUB</p>
+        <h2>People who inspire<span class="pink">.</span></h2>
+
+        <p class="muted">
+          Explore fictional demo profiles. Live community
+          accounts will be available when CRAVIN’ has a backend.
+        </p>
+
+        <div id="peopleGrid" class="people-grid"></div>
+
+        <div id="publicProfile" class="public-profile hidden"></div>
+      </div>
+    </section>
+
+    <!-- MY PROFILE -->
+    <section id="profilePage" class="page hidden">
+      <div class="content">
+        <div class="profile-header">
+          <img id="profileAvatar" class="profile-avatar" alt="Avatar">
+
+          <div class="profile-information">
+            <p class="eyebrow">WELCOME TO YOUR WORLD</p>
+            <h2 id="profileName">My Profile</h2>
+            <p id="profileUsername"></p>
+            <p id="profileBio"></p>
+            <p id="profileStats" class="muted"></p>
+          </div>
+
+          <div class="profile-buttons">
+            <button class="btn btn-outline" id="editProfileButton">
+              Edit Profile
+            </button>
+            <button class="btn btn-outline" id="editInterestsButton">
+              My Interests
+            </button>
+          </div>
+        </div>
+
+        <div class="section-heading section-spacing">
+          <div>
+            <p class="eyebrow">PRIVATE TO YOU</p>
+            <h2>My Savings Goals<span class="pink">.</span></h2>
+          </div>
+        </div>
+
+        <p class="muted">
+          Only you can see the savings information
+          stored in this browser.
+        </p>
+
+        <div id="savingsGrid" class="savings-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-logo">cravin’</div>
+    <p>See it. Love it. Save for it. ♡</p>
+    <small>Made for the things you dream about.</small>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="modalOverlay" class="modal-overlay hidden">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button id="closeModal" class="modal-close"
+        aria-label="Close">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
